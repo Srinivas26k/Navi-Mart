@@ -15,28 +15,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'pnpm'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-          run_install: false
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Run linting
-        run: pnpm lint
+        run: npm run lint
 
       - name: Run type checking
-        run: pnpm exec tsc --noEmit
+        run: npx tsc --noEmit
 
       - name: Run tests
-        run: pnpm test --if-present
+        run: npm test --if-present
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
 
       - name: Create build artifact
         if: success()

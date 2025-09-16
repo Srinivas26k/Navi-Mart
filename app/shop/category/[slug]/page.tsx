@@ -1,21 +1,24 @@
-import { getProducts, getCategories } from '@/lib/supabase/products'
+import { getProductsByCategory, getCategories } from '@/lib/supabase/products'
 import Link from 'next/link'
 import Image from 'next/image'
 
 // This is a Server Component - no 'use client' directive needed
-export default async function ShopPage() {
-  const products = await getProducts()
+export default async function CategoryPage({ params }: { params: { slug: string } }) {
+  const products = await getProductsByCategory(params.slug)
   const categories = await getCategories()
+  
+  // Find the current category name
+  const currentCategory = categories.find(cat => cat.slug === params.slug) || { name: 'Category' }
 
   return (
     <div className="min-h-screen bg-background-color">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-text-primary font-serif mb-4">
-            Our Products
+            {currentCategory.name}
           </h1>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Discover our wide range of natural and organic agro products, crafted with care from the heart of India.
+            Explore our collection of {currentCategory.name.toLowerCase()} products.
           </p>
         </div>
 
@@ -24,7 +27,7 @@ export default async function ShopPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               href="/shop" 
-              className="px-4 py-2 bg-brand-saffron text-deep-green rounded-full font-medium hover:bg-turmeric-yellow transition-colors duration-200"
+              className="px-4 py-2 bg-white text-text-primary border border-brand-saffron rounded-full font-medium hover:bg-brand-saffron hover:text-deep-green transition-colors duration-200"
             >
               All Products
             </Link>
@@ -32,7 +35,11 @@ export default async function ShopPage() {
               <Link 
                 key={category.id}
                 href={`/shop/category/${category.slug}`}
-                className="px-4 py-2 bg-white text-text-primary border border-brand-saffron rounded-full font-medium hover:bg-brand-saffron hover:text-deep-green transition-colors duration-200"
+                className={`px-4 py-2 rounded-full font-medium transition-colors duration-200 ${
+                  category.slug === params.slug
+                    ? 'bg-brand-saffron text-deep-green'
+                    : 'bg-white text-text-primary border border-brand-saffron hover:bg-brand-saffron hover:text-deep-green'
+                }`}
               >
                 {category.name}
               </Link>
@@ -90,8 +97,14 @@ export default async function ShopPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <h3 className="text-xl font-medium text-text-primary mb-2">No products found</h3>
-            <p className="text-text-secondary">We're working on adding more products to our collection.</p>
+            <h3 className="text-xl font-medium text-text-primary mb-2">No products found in this category</h3>
+            <p className="text-text-secondary">Check back later for new products.</p>
+            <Link 
+              href="/shop" 
+              className="mt-4 inline-block text-brand-saffron hover:underline font-medium"
+            >
+              Browse all products
+            </Link>
           </div>
         )}
       </div>

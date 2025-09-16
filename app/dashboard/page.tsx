@@ -1,3 +1,5 @@
+'use client'
+
 import ProtectedRoute from '@/components/auth/protected-route'
 import { useAuth } from '@/contexts/auth-context'
 import { useRouter } from 'next/navigation'

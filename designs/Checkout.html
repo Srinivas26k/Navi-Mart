@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agro Delight - Checkout</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Tiro+Devanagari+Hindi:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --brand-saffron: #F4C430;
+            --brand-turmeric-yellow: #FEDB39;
+            --brand-deep-green: #2E4034;
+            --brand-maroon: #800000;
+            --brand-earthy-brown: #A0522D;
+            --brand-light-beige: #F5F5DC;
+            --text-primary: #3D405B;
+            --text-secondary: #707070;
+            --background-color: #FAF8F5;
+            --brand-progress-bg: #EAE5E0;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+        }
+        .form-input:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-color: var(--brand-saffron);
+            border-color: var(--brand-saffron);
+        }
+        .indian-accent-border {
+            position: relative;
+        }
+        .indian-accent-border::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='3' viewBox='0 0 50 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5H10L12.5 0L15 1.5H25L27.5 3L30 1.5H40L42.5 0L45 1.5H50' stroke='%23F4C430' stroke-width='2'/%3E%3C/svg%3E%0A");
+        }
+    </style>
+</head>
+<body class="font-manrope bg-[var(--background-color)] text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<header class="border-b border-solid border-[var(--brand-light-beige)] bg-white/80 backdrop-blur-sm">
+<div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4 text-[var(--brand-deep-green)]">
+<svg class="h-10 w-10 text-[var(--brand-saffron)]" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" fill-opacity="0.3"></path>
+</svg>
+<h1 class="text-3xl font-bold tracking-tight text-[var(--brand-deep-green)]">Agro Delight</h1>
+</div>
+<nav class="hidden items-center gap-8 md:flex">
+<a class="text-base font-medium text-[var(--brand-deep-green)] hover:text-[var(--brand-saffron)] transition-colors" href="product.html">Our Products</a>
+<a class="text-base font-medium text-[var(--brand-deep-green)] hover:text-[var(--brand-saffron)] transition-colors" href="About.html">About Us</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[var(--brand-light-beige)] text-[var(--brand-deep-green)] hover:bg-[var(--brand-turmeric-yellow)] transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</button>
+<button class="relative flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[var(--brand-light-beige)] text-[var(--brand-deep-green)] hover:bg-[var(--brand-turmeric-yellow)] transition-colors">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+</svg>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[var(--brand-maroon)] text-xs font-bold text-white">3</span>
+</button>
+<div class="h-11 w-11 rounded-full bg-cover bg-center bg-no-repeat border-2 border-[var(--brand-saffron)]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXixVEzz38hH-hVq1oxjNN29rUA1QErpKM6tvurVTy45-6yRxFPAiNTW_pGb7IvDJ-RyFB2N11PPkeYsx4JrqkiygktvnVwWFzESP5PTfLGB43QGzdm7jFP72G5q8TEqotGFZtyV8VCO_dObJNfaGhfdN9nBbl7lx2IcLFKb2bhdBp1YjwwpAZqxTuV3sYQSRg97xcT4VUYs5cnftgz-qTXKI0ZYed_HFyjYSQ-Q27I8MKyc1XhurGqE3NdB9flJuKdtAfZsR7A7pA");'></div>
+</div>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-4xl flex-1 flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
+<div class="flex flex-col">
+<div class="mb-6">
+<div class="flex items-center gap-2 text-sm font-medium">
+<a class="text-[var(--brand-earthy-brown)] hover:underline" href="ShoppingCart.html">Cart</a>
+<span class="text-[var(--brand-earthy-brown)]">/</span>
+<span class="text-[var(--brand-deep-green)] font-semibold">Checkout</span>
+</div>
+</div>
+<div class="relative text-center mb-8">
+<h2 class="mb-6 text-4xl font-bold tracking-tight text-[var(--brand-deep-green)] indian-accent-border">Checkout</h2>
+</div>
+<div class="mb-8">
+<div class="flex items-center justify-between">
+<p class="text-sm font-medium text-[var(--brand-deep-green)]">Step 1 of 3 - Shipping</p>
+</div>
+<div class="mt-2 h-2.5 w-full rounded-full bg-[var(--brand-progress-bg)]">
+<div class="h-2.5 rounded-full bg-gradient-to-r from-[var(--brand-turmeric-yellow)] to-[var(--brand-saffron)]" style="width: 33%;"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+<div class="flex flex-col gap-6">
+<h3 class="text-2xl font-bold text-[var(--brand-deep-green)]">Shipping Information</h3>
+<form class="space-y-4">
+<div>
+<label class="mb-1 block text-sm font-medium text-[var(--text-primary)]" for="full-name">Full Name</label>
+<input class="form-input block w-full rounded-lg border-[var(--brand-progress-bg)] bg-white p-3.5 text-base text-[var(--brand-deep-green)] placeholder:text-[var(--brand-earthy-brown)]/70 focus:border-[var(--brand-saffron)] focus:ring-saffron" id="full-name" placeholder="Enter your full name" type="text"/>
+</div>
+<div>
+<label class="mb-1 block text-sm font-medium text-[var(--text-primary)]" for="address">Address</label>
+<input class="form-input block w-full rounded-lg border-[var(--brand-progress-bg)] bg-white p-3.5 text-base text-[var(--brand-deep-green)] placeholder:text-[var(--brand-earthy-brown)]/70 focus:border-[var(--brand-saffron)] focus:ring-saffron" id="address" placeholder="Enter your address" type="text"/>
+</div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1 block text-sm font-medium text-[var(--text-primary)]" for="city">City</label>
+<input class="form-input block w-full rounded-lg border-[var(--brand-progress-bg)] bg-white p-3.5 text-base text-[var(--brand-deep-green)] placeholder:text-[var(--brand-earthy-brown)]/70 focus:border-[var(--brand-saffron)] focus:ring-saffron" id="city" placeholder="Enter your city" type="text"/>
+</div>
+<div>
+<label class="mb-1 block text-sm font-medium text-[var(--text-primary)]" for="state">State</label>
+<input class="form-input block w-full rounded-lg border-[var(--brand-progress-bg)] bg-white p-3.5 text-base text-[var(--brand-deep-green)] placeholder:text-[var(--brand-earthy-brown)]/70 focus:border-[var(--brand-saffron)] focus:ring-saffron" id="state" placeholder="Enter your state" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+<div>
+<label class="mb-1 block text-sm font-medium text-[var(--text-primary)]" for="zip-code">Zip Code</label>
+<input class="form-input block w-full rounded-lg border-[var(--brand-progress-bg)] bg-white p-3.5 text-base text-[var(--brand-deep-green)] placeholder:text-[var(--brand-earthy-brown)]/70 focus:border-[var(--brand-saffron)] focus:ring-saffron" id="zip-code" placeholder="Enter your zip code" type="text"/>
+</div>
+<div>
+<label class="mb-1 block text-sm font-medium text-[var(--text-primary)]" for="phone-number">Phone Number</label>
+<input class="form-input block w-full rounded-lg border-[var(--brand-progress-bg)] bg-white p-3.5 text-base text-[var(--brand-deep-green)] placeholder:text-[var(--brand-earthy-brown)]/70 focus:border-[var(--brand-saffron)] focus:ring-saffron" id="phone-number" placeholder="Enter your phone number" type="tel"/>
+</div>
+</div>
+</form>
+</div>
+<div class="rounded-lg border border-[var(--brand-progress-bg)] bg-white/50 p-6 shadow-sm">
+<h3 class="mb-4 text-2xl font-bold text-[var(--brand-deep-green)]">Order Summary</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 rounded-lg bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTRRl05YLuZav1NbZb9kWRGc8dDWm-BXN8O_J5SmilWByJJNjjDdn9SHVRGvmDhDbZHPEbF-Loi6XnfNMYRo_6C7NDNjrNiJ-RSZYL5ig7OZF8m8iJBmTu9cRy_lyX8Bc3lcF5lOlkFq0zL9i9K-WfrUg0PM7PEh7zQGWmPbGBH3c6oSzPSP8eFMms0s-XGk4a3UDieyojkK1pCJJ5Mn9Qzrt3zD4XDZdvzIsIUwGsKHAPpPLqVFuTs9xungIHQNgWW3VrwT9jlITV");'></div>
+<div class="flex-grow">
+<p class="font-semibold text-[var(--brand-deep-green)]">Turmeric Powder</p>
+<p class="text-sm text-[var(--brand-earthy-brown)]">2 x 500g</p>
+</div>
+<p class="font-semibold text-[var(--brand-deep-green)]">$15.00</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 rounded-lg bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVbgFnSyNd1k1IMAdWYSlqkVIR9vTxvEUBynyiu2w0zoMC97nU9Sow2I7uCRIpS2GhqH_yp-0CHt10ypieiBenoHYX0jmAk3WeZBzYDWKjFMUUJwrHOJyy43THhUajAhgmSf4HM3uUNbnHCtU5qsHAijAR_u4eYdher2-wKD1NJs1WcBXsuD_QDVaix_qc_cKLxsYjepme0tC94VcqJ36Ojscz3wM3xbN-jGxpJgR1lSH2lZZYYZoC-IKhXoIlcRXFcsYQagYsjdEt");'></div>
+<div class="flex-grow">
+<p class="font-semibold text-[var(--brand-deep-green)]">Cumin Seeds</p>
+<p class="text-sm text-[var(--brand-earthy-brown)]">1 x 250g</p>
+</div>
+<p class="font-semibold text-[var(--brand-deep-green)]">$8.00</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-16 w-16 flex-shrink-0 rounded-lg bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2YX1QGuQjkIq8GyHOk5cx6pwgv9u0IZsGBgxtdjYBAZeKRr3zOBc2MscJLgRCPccPChUCZBrW5B9NXbHKjnHZKJ2OIMCU74ER7G0_LsyfdykKjU-eBy-TAmBl8LhUQcFLgGbNi-jmnp5V-jNPlNCnAL2Z9CYhdYvCEPxLP_E6cRJzUEkC4iTiKVaKuyJi0GhHLWfjjVtFsidEMg4uB8ljq3DNJI0PIwmh_1S771vF6AaWwOyNIINWou7DTDdch0PT6mAnXD1ObBLs");'></div>
+<div class="flex-grow">
+<p class="font-semibold text-[var(--brand-deep-green)]">Basmati Rice</p>
+<p class="text-sm text-[var(--brand-earthy-brown)]">1 x 1kg</p>
+</div>
+<p class="font-semibold text-[var(--brand-deep-green)]">$12.00</p>
+</div>
+</div>
+<div class="my-6 border-t border-dashed border-[var(--brand-progress-bg)]"></div>
+<div class="space-y-2 text-sm">
+<div class="flex justify-between">
+<p class="text-[var(--brand-earthy-brown)]">Subtotal</p>
+<p class="font-medium text-[var(--brand-deep-green)]">$35.00</p>
+</div>
+<div class="flex justify-between">
+<p class="text-[var(--brand-earthy-brown)]">Shipping</p>
+<p class="font-medium text-[var(--brand-deep-green)]">$5.00</p>
+</div>
+</div>
+<div class="my-6 border-t border-solid border-[var(--brand-progress-bg)]"></div>
+<div class="flex justify-between">
+<p class="text-lg font-bold text-[var(--brand-deep-green)]">Total</p>
+<p class="text-lg font-bold text-[var(--brand-maroon)]">$40.00</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-col items-center">
+<button class="w-full max-w-md rounded-lg bg-gradient-to-r from-[var(--brand-turmeric-yellow)] to-[var(--brand-saffron)] py-3 px-5 text-base font-bold text-[var(--brand-deep-green)] transition-all hover:shadow-lg hover:from-[var(--brand-saffron)] hover:to-[var(--brand-turmeric-yellow)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-saffron)] focus:ring-offset-2 focus:ring-offset-[var(--background-color)]">
+                        Continue to Payment
+                    </button>
+<div class="mt-4 flex items-center gap-2 text-sm text-[var(--brand-earthy-brown)]">
+<svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208Z"></path>
+</svg>
+<span>Secure SSL Checkout</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agro Delight - Spices</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-color: #D54D2B;--secondary-color: #F5F3F0;--background-color: #FFFFFF;--text-primary: #181611;--text-secondary: #8A7C60;--accent-color: #FFC107;--deep-green: #386641;}
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-primary);
+    }
+    .btn-primary {
+        @apply bg-[var(--primary-color)] text-white py-2 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:ring-opacity-75 transition duration-300 ease-in-out;
+    }
+  </style>
+</head>
+<body>
+<div class="relative flex size-full min-h-screen flex-col bg-[var(--background-color)] group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--secondary-color)] px-10 py-4">
+<div class="flex items-center gap-10">
+<a href="index.html" class="flex items-center gap-3 text-[var(--text-primary)]">
+<svg class="text-[var(--deep-green)]" fill="none" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 7L12 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M22 7L12 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M12 22V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M17 4.5L7 9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<h1 class="text-[var(--text-primary)] text-2xl font-bold leading-tight tracking-tight">Agro Delight</h1>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="product.html">Shop</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors" href="About.html">About Us</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4">
+<div class="relative hidden sm:block max-w-xs w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-[var(--text-secondary)]">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input block w-full pl-10 pr-4 py-2 rounded-lg text-[var(--text-primary)] bg-[var(--secondary-color)] placeholder:text-[var(--text-secondary)] border-transparent focus:border-[var(--primary-color)] focus:ring-1 focus:ring-[var(--primary-color)] transition duration-200" placeholder="Search products..." type="search"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-[var(--secondary-color)] text-[var(--text-primary)] transition-colors">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path>
+</svg>
+</button>
+<a href="ShoppingCart.html" class="relative p-2 rounded-full hover:bg-[var(--secondary-color)] text-[var(--text-primary)] transition-colors">
+<span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-[var(--primary-color)]"></span>
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+</svg>
+</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2q4olsuz3o9eTSFWgjVN-CEKfKbXT9HJIGM9k8XLG2Dfi-qDY_XjB-jh6a_QpZct6bgPWpP-IV9gBk2nFNHJuoPZHZtbG2ciFBgE_-WKd6v4CYpfH9U-FnSrMoFsxtwXrC1ZJlFVXYZ084tdlmVq0UAKvD8bXfBYlMY_fGijHQzuI6jwalk-nOfYBYZQoju02DQInYKbu3f3gp0jSFU9_9_k7yHkHtBIjzQ7GOnlr7gCRaFFVdrq_RuJ3BK_3jyBvm4uYO74IQaqe");'></div>
+</div>
+</header>
+<main class="flex flex-1">
+<aside class="w-80 border-r border-[var(--secondary-color)] p-6 hidden lg:block">
+<h3 class="text-[var(--text-primary)] text-xl font-bold mb-6">Filters</h3>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-[var(--text-primary)] text-base font-medium" for="category">Category</label>
+<select class="form-select w-full rounded-lg border-gray-300 focus:border-[var(--primary-color)] focus:ring-1 focus:ring-[var(--primary-color)] transition duration-200" id="category">
+<option selected="">All Spices</option>
+<option>Whole Spices</option>
+<option>Ground Spices</option>
+<option>Spice Blends</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[var(--text-primary)] text-base font-medium" for="price">Price Range</label>
+<input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[var(--primary-color)]" id="price" max="100" min="0" type="range"/>
+</div>
+<div class="space-y-2">
+<p class="text-[var(--text-primary)] text-base font-medium">Dietary</p>
+<div class="space-y-1">
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="organic" type="checkbox"/>
+<label class="ml-2 text-[var(--text-secondary)]" for="organic">Organic</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="gluten-free" type="checkbox"/>
+<label class="ml-2 text-[var(--text-secondary)]" for="gluten-free">Gluten-Free</label>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-gray-300 text-[var(--primary-color)] focus:ring-[var(--primary-color)]" id="vegan" type="checkbox"/>
+<label class="ml-2 text-[var(--text-secondary)]" for="vegan">Vegan</label>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<p class="text-[var(--text-primary)] text-base font-medium">Rating</p>
+<div class="flex items-center gap-1 text-[var(--accent-color)]">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.366 2.445a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.365-2.445a1 1 0 00-1.175 0l-3.365 2.445c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.366 2.445a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.365-2.445a1 1 0 00-1.175 0l-3.365 2.445c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.366 2.445a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.365-2.445a1 1 0 00-1.175 0l-3.365 2.445c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.366 2.445a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.365-2.445a1 1 0 00-1.175 0l-3.365 2.445c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+<svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.366 2.445a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.365-2.445a1 1 0 00-1.175 0l-3.365 2.445c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+<span class="ml-2 text-[var(--text-secondary)] text-sm">&amp; Up</span>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex-1 p-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+<div>
+<nav aria-label="Breadcrumb" class="flex items-center text-sm mb-2">
+<ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="index.html">Home</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="mx-1 text-[var(--text-secondary)]">/</span>
+<a class="inline-flex items-center text-[var(--text-secondary)] hover:text-[var(--primary-color)]" href="product.html">Shop</a>
+</div>
+</li>
+<li>
+<div class="flex items-center">
+<span class="mx-1 text-[var(--text-secondary)]">/</span>
+<span class="text-[var(--text-primary)]">Spices</span>
+</div>
+</li>
+</ol>
+</nav>
+<h2 class="text-[var(--text-primary)] text-4xl font-bold tracking-tight">Spices</h2>
+</div>
+<div class="flex items-center gap-4 mt-4 md:mt-0">
+<span class="text-[var(--text-secondary)] text-sm">Sort by:</span>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg text-sm font-medium bg-[var(--primary-color)] text-white">Featured</button>
+<button class="px-4 py-2 rounded-lg text-sm font-medium bg-[var(--secondary-color)] text-[var(--text-primary)] hover:bg-gray-200">Price: Low to High</button>
+<button class="px-4 py-2 rounded-lg text-sm font-medium bg-[var(--secondary-color)] text-[var(--text-primary)] hover:bg-gray-200">Price: High to Low</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div class="group relative flex flex-col">
+<a href="ProductDetail.html">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Turmeric Powder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XoKOp0Kg21U1tQ7GWJq5RMLdBY1t2MgNrT7kGwiQXczeIyw0IYvwYgPGg0ISeC-YISCf-YoRVDv9N02YhhVzI_eDpGLWQy_QyNQ33lljTFNshGdP0uNrmix0PtzKFzj-ol0qKM6boUM22d7qhUU2gYNo50lh-bNmzfvM7-DtvjFKvAzyTeH_qPv7HUG6fqo6nLpJSsfiMsIo32JXBSbXAK95GCN3aUcKez0w7FzuC40cYwTqDoTB9nMmSRVwzFmjuvHKyEigiTzX"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Turmeric Powder</h4>
+</a>
+<p class="text-[var(--text-secondary)] text-base">$3.99</p>
+<a href="ShoppingCart.html">
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</a>
+</div>
+<div class="group relative flex flex-col">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Cumin Seeds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaAvHNbHQfM8XXNEIQROTP9QDtOHdFJPGdsa9jZY_X5b8MyLcGoQH2-Kf-s4qd8cqF3Ldo_1biYoyOgKdgZRv8qIm513MH0FjLkyEhig7EqFH07kzm7jJN5jkWCnW2cfeaq8oee4DdNI-JuEoIPlGhTDa6JolAWjjGkCScz5vTTOAs4eMIGsuBxU-iuYanRbpetVRXKjGSBmwz1wL0AoRgsLCgB4FaVgvASYEDT5V4D2ih8GYqLtLzQN73LOefHpiX99f4vUSYUUHZ"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Cumin Seeds</h4>
+<p class="text-[var(--text-secondary)] text-base">$2.49</p>
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</div>
+<div class="group relative flex flex-col">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Coriander Powder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO6M1GxKKXWNuOdAUMcAjwHcFAK_Gq9mhvehHjmrDn65qe4BNHR4o-5JvI1l5KGZuFsffwL6pJGI_XwyNb_8ge5lHszr6J-hSUxnKzo0UUfK7ujMXeFtYPLnS34ggoY_fbEmECFoHUwXYMfOVb8_d16fefO63iBD1zxhr6S20BjDtIcf5qU7DtVU8o2rxChudGbKn7umH7_qVbef0G4dxXycFUJTl4g7h-QEopi-7yyWQKXg8pQTjie8ScztZ7fe6YMEU3j7XKUdKO"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Coriander Powder</h4>
+<p class="text-[var(--text-secondary)] text-base">$2.99</p>
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</div>
+<div class="group relative flex flex-col">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Garam Masala" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp1QDvTMJ4y8D6RxiIfGhERiP-S38hx5UXbhTKu4DT5yl1CPT3AR_3MuF_6FPzelvZMb3fpv3vwOkhsG59cFEYf4cMDoDIJzi7wiZwtaaI19SyMZ-Ewmd-hYZS2LrP8Qebjkq80h7k1BNoS1y5qqvQLmmvHxubMspIYZLVs9TzT2SeCPJ1JTihGu6tQ4cur_p6X_GJ00T6SybWRF9NJjXdY5rjpzQkDH3c-cciWUj-r3ynYubqxEzbM2MFRQi5o83KxJQQ7JCmk99Z"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Garam Masala</h4>
+<p class="text-[var(--text-secondary)] text-base">$4.99</p>
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</div>
+<div class="group relative flex flex-col">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Chili Powder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOA-Y96EBi9XA3BYxTtwYEM0LWHsgtcWwWR6q3eXU8rUs_LO5clie81kvSJCIPac2VRQj6K_b4MldlxgOeSXcUY2D7W3Xfkm0lMlHDwV3MvmVw_5rvb-86SobS63nNbQB4iavwX1cLg57Dmz96grnZ4gp7sxaKbeYspKsBIChZPZmSYKilntn2md7kHwlXswLf6t_61_SNrlEvpDthJt-QBdrY5UdFWLwRO2Q3_4rwXfRVvbSDn2gO9Xajlg3mEaD_Irz2tfJ1X3BK"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Chili Powder</h4>
+<p class="text-[var(--text-secondary)] text-base">$1.99</p>
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</div>
+<div class="group relative flex flex-col">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Mustard Seeds" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCATaQ8NgK8uALac6O_JRU2b6sGk9D-1xnAJ8pVmKNGF9_Ru_x8CpcGHg-XnWnNj4VMfD_hEw39_mjAt_XSVwpDua_gl5oHYnFwOp2SZYxqfv5urdBtzUs5IaAs3rRee80iSwPDCFnvf-4hNMTeqfpwDBtDFuZ-L9J2k9K5drWjZENGNQ97oS4XDEQMmCTFlEI5AevH06eM_psL6JY2vIy79d-9BG74Pwud04-w3UkSAwiOlP0aocWqTg7AzMbnkO0kdZSNNOFWZ-rP"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Mustard Seeds</h4>
+<p class="text-[var(--text-secondary)] text-base">$1.79</p>
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</div>
+<div class="group relative flex flex-col">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Cardamom Pods" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQKNBOGL7ANE7VKy-N5OhnUKHSWeWJmM-fWV-gDAcLaRMz0Li1Q9AOmzfZbrvaEk4h0JxW4OdhNpSDvbDu4VSg69NgmLu73uQ7NRpLrve1z1cN2GxEF09ifuMldvmf1Xj7tHFzR-Mwl5nu9xGm2NjNg9GGa3bAS2pgLDW12WSt6dI5RAIiKzGnGkCPITC7rZJpSYaFtOKybKL6BCfokpveZOVXsVYu2ah60HBxEkxtpn_sTZqd8IBXwr1XeRttbD-BPSK5iDa3gf0X"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Cardamom Pods</h4>
+<p class="text-[var(--text-secondary)] text-base">$5.49</p>
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</div>
+<div class="group relative flex flex-col">
+<a href="ProductDetail.html">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden mb-4">
+<img alt="Cinnamon Sticks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt74nNfqreLQaBkWfpHHwxmmlqKyVqyc056tje2j5ONhoctd5bKTJlcjB-vMjyu2PtbDw434G6Zx9Y0VAVM_usODyt38sOE1qS7QtF-tDiy8jvz-e6DJhf2fF3iHhxHEDVdrZWdypbsubSInVd9awJXXtzgXDq9QTagoQ0QkeQsrcr6cMwUubsBJXEJOykj9Dy6LNo-daE9G4LGgiez1Kmbqgu0rsvubzDxPxOAslx0k665J6brIR-0MUC8oQULTbvOTWBWnPQZXNB"/>
+</div>
+<h4 class="text-[var(--text-primary)] text-lg font-medium">Cinnamon Sticks</h4>
+</a>
+<p class="text-[var(--text-secondary)] text-base">$3.29</p>
+<a href="ShoppingCart.html">
+<button class="btn-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

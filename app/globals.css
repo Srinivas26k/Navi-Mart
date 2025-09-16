@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  /* Agro Delight Brand Colors */
+  --brand-saffron: #f4c430;
+  --brand-turmeric-yellow: #fedb39;
+  --brand-deep-green: #2e4034;
+  --brand-maroon: #800000;
+  --brand-earthy-brown: #a0522d;
+  --brand-light-beige: #f5f5dc;
+  --text-primary: #3d405b;
+  --text-secondary: #707070;
+  --background-color: #faf8f5;
+  --brand-progress-bg: #eae5e0;
+
+  /* Additional colors from different pages */
+  --primary-color: #f4c430;
+  --secondary-color: #fefce8;
+  --accent-color: #800000;
+  --deep-green: #2e4034;
+  --turmeric-yellow: #fedb39;
+}
+
+@layer base {
+  body {
+    font-family: "Public Sans", "Manrope", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", "Tiro Devanagari Hindi", serif;
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}

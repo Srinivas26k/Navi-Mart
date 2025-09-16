@@ -2,9 +2,12 @@
 
 import Link from "next/link"
 import { useCart } from "../app/contexts/cart-context"
+import { useAuth } from "@/contexts/auth-context"
+import UserProfile from "@/components/auth/user-profile"
 
 export default function Header() {
   const { state } = useCart()
+  const { user } = useAuth()
 
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--brand-turmeric-yellow)] px-4 sm:px-6 lg:px-8 py-4 shadow-sm bg-white">
@@ -48,9 +51,16 @@ export default function Header() {
       </nav>
 
       <div className="flex items-center gap-2">
-        <button className="flex min-w-[90px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent border border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white text-sm font-bold leading-normal tracking-wide transition-colors duration-200 ease-in-out">
-          <span className="truncate">Login</span>
-        </button>
+        {user ? (
+          <UserProfile />
+        ) : (
+          <Link 
+            href="/login"
+            className="flex min-w-[90px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent border border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white text-sm font-bold leading-normal tracking-wide transition-colors duration-200 ease-in-out"
+          >
+            <span className="truncate">Login</span>
+          </Link>
+        )}
 
         <button className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[var(--secondary-color)] text-[var(--text-primary)] hover:bg-[var(--turmeric-yellow)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 transition-colors duration-200">
           <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Public_Sans, Playfair_Display, Manrope } from "next/font/google"
 import "./globals.css"
 import { CartProvider } from "./contexts/cart-context"
+import { AuthProvider } from "@/contexts/auth-context"
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -39,7 +40,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans bg-[var(--background-color)] text-[var(--text-primary)]">
-        <CartProvider>{children}</CartProvider>
+        <AuthProvider>
+          <CartProvider>{children}</CartProvider>
+        </AuthProvider>
       </body>
     </html>
   )

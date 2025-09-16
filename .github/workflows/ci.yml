@@ -8,9 +8,9 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest  # Needed for GitHub Actions runners
+    runs-on: ubuntu-latest  # GitHub-hosted runner
     container:
-      image: node:22-alpine  # Use lightweight Node.js Alpine image
+      image: node:22-alpine  # Lightweight Node.js Alpine container
 
     steps:
       - name: Checkout code
@@ -19,7 +19,7 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 9 # or the pnpm version you use in package.json
+          version: 9
           run_install: false
 
       - name: Install dependencies
@@ -34,7 +34,7 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Upload build artifacts (for debugging if needed)
+      - name: Upload build artifacts (if build fails)
         if: ${{ failure() }}
         uses: actions/upload-artifact@v4
         with:
@@ -50,15 +50,6 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const issue_number = context.issue?.number;
-            const message = "🚨 CI/CD pipeline failed on **${context.workflow}**.\nPlease check the logs before merging.";
-            if (issue_number) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number,
-                body: message
-              });
-            } else {
-              console.log(message);
-            }
+            const message = `🚨 CI/CD pipeline failed on **${context.workflow}**.
+            Please check the logs before merging.`;
+            console.log(message);

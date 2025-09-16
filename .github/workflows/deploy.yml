@@ -1,11 +1,11 @@
-name: PR Quality Checks
+name: Build and Quality Checks
 
 on:
-  pull_request:
+  push:
     branches: [ main ]
 
 jobs:
-  quality-checks:
+  build-and-checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -38,28 +38,42 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Upload build artifacts (if build fails)
-        if: ${{ failure() }}
+      - name: Create build artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: failed-build-logs
+          name: build-output
           path: |
             .next/
             dist/
             build/
-            pnpm-debug.log
 
-      - name: Comment on PR with failure details
-        if: ${{ failure() }}
+      - name: Comment on commit with build status
+        if: success()
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-            const message = `🚨 Quality checks failed. Please check the logs and fix the issues before merging.`;
-            await github.rest.issues.createComment({
+            const { repo: { owner, repo }, sha } = context;
+            const message = `✅ Build successful! All quality checks passed.\n\nBuild artifacts are available as workflow artifacts.`;
+            await github.rest.repos.createCommitComment({
               owner,
               repo,
-              issue_number,
+              commit_sha: sha,
+              body: message
+            });
+
+      - name: Notify on build failure
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { repo: { owner, repo }, sha } = context;
+            const message = `❌ Build failed. Please check the logs and fix issues before deploying.`;
+            await github.rest.repos.createCommitComment({
+              owner,
+              repo,
+              commit_sha: sha,
               body: message
             });

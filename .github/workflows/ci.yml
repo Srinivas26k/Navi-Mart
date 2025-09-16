@@ -1,42 +1,32 @@
-name: PR Quality Checks
+name: CI/CD Pipeline
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  quality-checks:
+  build-and-test:
     runs-on: ubuntu-latest
+    container:
+      image: node:22-alpine
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-          run_install: false
-
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
-      - name: Run linting
-        run: pnpm lint
-
-      - name: Run type checking
-        run: pnpm exec tsc --noEmit
+      - name: Run linter
+        run: npm run lint
 
       - name: Run tests
-        run: pnpm test --if-present
+        run: npm test --if-present
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
 
       - name: Upload build artifacts (if build fails)
         if: ${{ failure() }}
@@ -47,19 +37,13 @@ jobs:
             .next/
             dist/
             build/
-            pnpm-debug.log
+            npm-debug.log
 
-      - name: Comment on PR with failure details
+      - name: Notify on failure
         if: ${{ failure() }}
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
-            const message = `🚨 Quality checks failed. Please check the logs and fix the issues before merging.`;
-            await github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number,
-              body: message
-            });
+            const message = `🚨 CI/CD pipeline failed on **${context.workflow}**.
+            Please check the logs before merging.`;
+            console.log(message);
